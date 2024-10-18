@@ -1,0 +1,138 @@
+#gallery {
+    background-color: var(--bg-color-2);
+
+    .item {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 1rem;
+
+        .text {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+            transform: translateY(110%);
+            transition: .75s;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            h3 {
+                color: var(--text-color-2);
+                font-size: 1.5rem;
+                margin: .5rem 0;
+            }
+
+            p {
+                margin: 0;
+                color: var(--text-color-2);
+                font-size: 1rem;
+            }
+        }
+
+
+        img {
+            transition: .75s;
+        }
+
+        &:hover img {
+            transform: scale(1.1);
+        }
+
+        &:hover .text {
+            transform: translateY(0);
+        }
+
+    }
+
+}
+
+@media (min-width:640px) {
+    #gallery {
+
+    .content {  display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px 10px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "pizza steaks"
+          "burger steaks"
+          "pizza-slices fried"
+          "pizza-slices kapap"
+          "frittata .";
+      }
+      
+      .pizza { grid-area: pizza; }
+      
+      .burger { grid-area: burger; }
+      
+      .steaks { grid-area: steaks; }
+      
+      .pizza-slices { grid-area: pizza-slices; }
+      
+      .fried { grid-area: fried; }
+      
+      .kapap { grid-area: kapap; }
+      
+      .frittata { grid-area: frittata; }
+
+      img {
+        height: 100%;
+    }
+}
+}
+
+
+
+
+
+@media (min-width:1024px) {
+    #gallery {
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px 10px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "pizza steaks burger"
+            "pizza-slices steaks fried"
+            "pizza-slices frittata kapap";
+    }
+
+
+    .pizza {
+        grid-area: pizza;
+    }
+
+    .burger {
+        grid-area: burger;
+    }
+
+    .steaks {
+        grid-area: steaks;
+    }
+
+    .pizza-slices {
+        grid-area: pizza-slices;
+    }
+
+    .fried {
+        grid-area: fried;
+    }
+
+    .kapap {
+        grid-area: kapap;
+    }
+
+    .frittata {
+        grid-area: frittata;
+    }
+
+    }
+}

@@ -1,0 +1,98 @@
+#chefs {
+
+
+    .outer{
+        padding: 1rem;
+    }
+
+    .item {
+        border-radius: var(--main-radius);
+        overflow: hidden;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        transition: .75s;
+
+        &:hover .icons {
+            transform: translateX(0%);
+        }
+        &:hover  {
+            transform: scale(1.05);
+        }
+    }
+
+    img {
+        position: relative;
+    }
+
+    .icons {
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 10%;
+        right: .5rem;
+        display: flex;
+        flex-direction: column;
+        padding: .5rem;
+        align-items: center;
+        border-radius: 5px;
+        transform: translateX(130%);
+        transition: .75s;
+    
+        i {
+            display: block;
+            font-size: 1.5rem;
+            padding-block: .5rem;
+            color: var(--text-color-2);
+            opacity: .5;
+            transition: .75s;
+    
+            &:hover {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+    }
+    
+    .text {
+        padding: 1rem;
+        text-align: center;
+        position: relative;
+ 
+
+        img{
+            position: absolute;
+            top: -3.5rem;
+            left: 0;
+            right: 0;
+        }
+
+        h4 {
+            margin: 0;
+            font-size: 1.5rem;
+    
+            span {
+                font-size: 1rem;
+                display: block;
+                color: var(--text-color-3);
+            }
+        }
+
+
+    }
+
+
+
+
+}
+
+
+@media (min-width: 640px) {
+    #chefs {
+        .content{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+    }
+}

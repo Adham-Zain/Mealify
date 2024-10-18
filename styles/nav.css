@@ -1,0 +1,145 @@
+.nav{
+    background-color: var(--bg-color-1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    box-shadow: 1px 1px 5px rgba(0.2, 0.2, 0.2, 0.2);
+
+    .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    a{
+        color: var(--text-color-1);
+        transition: .75s;
+    }
+
+
+    i{
+        font-size: 2rem;
+        color: var(--text-color-1);
+        position: absolute;
+        transition: .75s;
+    }
+
+    ul{
+        box-shadow: 1px 1px 5px rgba(0.2, 0.2, 0.2, 0.2);
+        position: absolute;
+        top: 112%;
+        background-color: var(--bg-color-1);
+        right: -1.5rem;
+        width: 80%;
+        padding: 1rem ;
+        transform: translateX(110%);
+        opacity: 0;
+        transition: .75s;
+        a{
+            display: inline-block;
+            padding-block : .50rem ;
+            font-size: 1.5rem;
+            font-weight: 500;
+            position: relative;
+            opacity: .5;
+            transition: .5s;
+            &::after{
+                content: "";
+                width: 0%;
+                border-bottom: 2px solid var(--main-color);
+                display: block;
+                position: absolute;
+                bottom: 0;
+                transition: .75s;
+            }
+            &:hover{
+                opacity: 1; 
+            }
+            &:hover::after{
+                width: 100%;
+            }
+
+        }
+    }
+
+    input[type=checkbox]{
+        display: none;
+    }
+
+    .menu-toggle i {
+        right: 0;
+        top: .25rem;
+    }
+    #menu-checkbox:checked + .menu-toggle i{
+        transform: rotate(90deg) scale(1.2);
+    }
+    #menu-checkbox:checked + label + ul {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .theme-toggle i{
+        top: 5px;
+        right: 3rem;
+    }
+    .light-icon {
+        opacity: 0;
+        transform: scale(0);
+    }
+    #theme-checkbox:checked + label .light-icon {
+        opacity: 1;
+        transform: scale(1) rotate(-360deg);
+    }
+    #theme-checkbox:checked + label .dark-icon {
+        opacity: 0;
+        transform:scale(0) rotate(-360deg);
+    }
+
+}
+
+
+
+@media (min-width:780px){
+
+    .nav{
+        .container { 
+            padding: 0 5%;
+        }
+
+        .menu-toggle {
+            display: none;
+        } 
+        .theme-toggle i{
+            position: absolute;
+            top: 1.5rem;
+            right: 0;
+        }
+        .theme-toggle{
+            order: 2;
+        }
+
+        ul{
+            order: 1;
+            padding: 0 2rem;
+            transform: translate(0);
+            opacity: 1;
+            position: relative;
+            left: 0;
+            width: fit-content;
+            box-shadow: none;
+            li{
+                display: inline-block;
+                a{
+                    margin: 0 1.5rem;
+                    font-size: 1.5rem;
+                }
+            }
+
+        }
+
+    }
+
+
+}
